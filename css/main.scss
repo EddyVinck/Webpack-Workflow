@@ -1,0 +1,9 @@
+@import "colors";
+@import "elements";
+ul {
+    border: 2px solid $listBorderColor;
+    background-color: $listBG;
+}
+ul li {
+    text-transform: capitalize;
+}
