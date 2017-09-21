@@ -64,3 +64,8 @@ p, ul, ol {
 nav, .nav {
   height: 60px;
   background-color: #FCFCFC; }
+
+footer.footer-1 {
+  background-color: #454545;
+  color: #edf14b;
+  overflow: hidden; }

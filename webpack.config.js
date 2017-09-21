@@ -28,7 +28,7 @@ module.exports = {
 						options: {
 							pretty: true
 						}
-					}
+					}					
 				]
 			},
 			{
@@ -42,13 +42,12 @@ module.exports = {
 				use: ['html-loader']
 			},
 			{
-				test: /\.(jpg|png|svg)$/,
+				test: /\.(jpg|png)$/,
 				use: [
 					{
 						loader: 'file-loader',
 						options: {
-							name: '[name].[ext]',
-							outputPath: 'img/'
+							name: 'img/[name].[ext]'
 						}
 					}
 				]

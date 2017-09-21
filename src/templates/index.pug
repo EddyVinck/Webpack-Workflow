@@ -2,23 +2,23 @@ doctype html
 html
     head
         title= pageTitle
-        
         script(type='text/javascript').
             if (foo) bar(1 + 5)
     body
         include /components/nav.pug
-        h1 Pug - node template engine
-        #container.col
-            if youAreUsingPug
-                p You are amazing
-            else
-                p Get on it!
-            p.
-                Pug is a terse and simple templating language with a
-                strong focus on performance and powerful features.
-            a(href="/test.html") Test punt ha tee em el
-            h2 hello
-            h3 dab on them haters
-        
-
-        
+        .container
+            section
+                .background-color-light-grey.padding-top-large.padding-bottom
+                    .row
+                        .column.s12
+                            h1 Webpack, Sass & Pug
+                            h2 it's all here.
+                            p.
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi, 
+                                impedit similique aperiam tempore numquam fuga et esse laboriosam 
+                                suscipit velit, accusamus deleniti veritatis exercitationem error 
+                                dolorum
+                            img(src=require("../img/webpack.png") alt="Webpack" custom-property-such-as-lazy-loading)
+                            img(src=require("../img/webpack.png") alt="Webpack" custom-property-such-as-lazy-loading)
+                            img(src=require("../img/webpack.png") alt="Webpack" custom-property-such-as-lazy-loading)
+        include /components/footer.pug
