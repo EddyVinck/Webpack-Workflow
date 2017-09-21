@@ -1,0 +1,22 @@
+html {
+    font-family: $fonts;
+}
+$h1-fz-small: 3rem;
+$text-margin-bottom: 1.2rem;
+$default-font-size: 1rem;
+
+
+h1,.h1, h2,.h2, h3,.h3, h4,.h4, h5,.h5 {
+    margin-top: 0;
+    font-weight: 700;
+}
+ul, ol, p {
+    margin-top: 0;
+    margin-bottom: $text-margin-bottom;
+}
+h1 {
+    font-size: $h1-fz-small;
+}
+p, ul, ol {
+    font-size: 1rem;
+}

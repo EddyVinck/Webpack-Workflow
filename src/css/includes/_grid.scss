@@ -1,0 +1,32 @@
+@import "settings";
+body {
+    margin: 0;
+}
+.container {
+    .row {
+        max-width: $max-container-width;
+    }     
+    margin: 0 auto;
+}
+.row {
+    margin: 0 auto;
+    width: $row-width;
+
+    // @media  {
+
+    // }
+}
+.column {
+    max-width: 100%;
+    
+    &.s12 {
+        width: 12 / 12 * 100%;
+    }
+    &.s11 {
+        width: 11/12*100%;
+    }
+    &.s6 {
+        width: 6/12*100%;
+    }
+    
+}

@@ -8,7 +8,7 @@ var extractPlugin = new ExtractTextPlugin({
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
-	entry: './src/index.js',
+	entry: './src/js/main.js',
 	output: {
     	filename: 'bundle.js',
     	path: path.resolve(__dirname, 'dist') //,
@@ -21,6 +21,17 @@ module.exports = {
 				test: /\.js$/, exclude: /node_modules/, loader: "babel-loader" 
 			},
 			{
+				test: /\.pug$/,
+				use: [
+					{
+						loader:'pug-loader',
+						options: {
+							pretty: true
+						}
+					}
+				]
+			},
+			{
 				test: /\.scss$/,
 				use: extractPlugin.extract({
 					use: ['css-loader','sass-loader']
@@ -31,7 +42,7 @@ module.exports = {
 				use: ['html-loader']
 			},
 			{
-				test: /\.(jpg|png)$/,
+				test: /\.(jpg|png|svg)$/,
 				use: [
 					{
 						loader: 'file-loader',
@@ -44,11 +55,19 @@ module.exports = {
 			}
 		]
 	},
+	
 	plugins: [
 		extractPlugin,
+		//// actual templates
 		new HtmlWebpackPlugin({
-			template: "src/index.html",
-			favicon: 'src/img/ecmascript6.png'
+			template: "src/templates/index.pug",
+			favicon: "src/img/ecmascript6.png",
+			filename: "index.html"
+		}),	
+		new HtmlWebpackPlugin({
+			template: "src/templates/test.pug",
+			favicon: "src/img/ecmascript6.png",
+			filename: "test.html"
 		})
 	]
 };
