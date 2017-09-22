@@ -4,6 +4,7 @@ html
         title= pageTitle
         script(type='text/javascript').
             if (foo) bar(1 + 5)
+        include /includes/meta.pug
     body
         include /components/nav.pug
         .container
@@ -18,7 +19,13 @@ html
                                 impedit similique aperiam tempore numquam fuga et esse laboriosam 
                                 suscipit velit, accusamus deleniti veritatis exercitationem error 
                                 dolorum
-                            img(src=require("../img/webpack.png") alt="Webpack" custom-property-such-as-lazy-loading)
-                            img(src=require("../img/webpack.png") alt="Webpack" custom-property-such-as-lazy-loading)
-                            img(src=require("../img/webpack.png") alt="Webpack" custom-property-such-as-lazy-loading)
+                            
+                            - var images = ["webpack", "pug","babel","sass"];
+                            for img, ext in images
+                                img(src=require("../img/"+img+".png") alt=(img+" logo") custom-property-such-as-lazy-loading)
+                                p does #{img} work??
+                            //- img(src=require("../img/webpack.png") alt="Webpack" custom-property-such-as-lazy-loading)
+                            //- img(src=require("../img/pug.png") alt="Webpack" custom-property-such-as-lazy-loading)
+                            //- img(src=require("../img/babel.png") alt="Webpack" custom-property-such-as-lazy-loading)
+                            //- img(src=require("../img/sass.png") alt="Webpack" custom-property-such-as-lazy-loading)
         include /components/footer.pug

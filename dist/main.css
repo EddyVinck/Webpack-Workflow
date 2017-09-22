@@ -5,6 +5,9 @@ ul {
   list-style: none;
   padding: 0; }
 
+img {
+  max-width: 100%; }
+
 body {
   margin: 0; }
 
@@ -67,5 +70,10 @@ nav, .nav {
 
 footer.footer-1 {
   background-color: #454545;
-  color: #edf14b;
   overflow: hidden; }
+  footer.footer-1 ul li, footer.footer-1 ul a {
+    color: #edf14b;
+    text-decoration: none; }
+    footer.footer-1 ul li:hover, footer.footer-1 ul a:hover {
+      color: #f7f7f7;
+      text-decoration: underline; }

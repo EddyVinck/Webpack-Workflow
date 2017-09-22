@@ -1,4 +1,7 @@
-footer.footer-1
-    ul
-        each val in [1, 2, 3, 4, 5]
-            li= val
+footer.footer-1.padding-top
+    .container
+        .row
+            .column.s12
+                ul
+                    each val in ["index", "test", 3, 4, 5]
+                        li: a(href=val+".html")= val 

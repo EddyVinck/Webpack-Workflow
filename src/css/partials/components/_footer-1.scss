@@ -1,5 +1,15 @@
 footer.footer-1{
     background-color: #454545;
-    color: #edf14b;
+    ul {
+        li, a {
+            color: #edf14b;
+            text-decoration: none;
+            &:hover {
+                color: #f7f7f7;
+                text-decoration: underline;
+            }
+        }
+    }
+    
     overflow: hidden; // waarom wordt de footer hierdoor groter??
 }
