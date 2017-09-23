@@ -1,6 +1,6 @@
 @font-face {
   font-family: "open-sans";
-  src: url(/assets/fonts/OpenSans-Regular.ttf);
+  src: url(src/assets/thirdparty/googlefonts/Open_Sans/OpenSans-Regular.ttf) format("truetype");
   font-weight: normal;
   font-style: normal; }
 .background-color-light-grey {

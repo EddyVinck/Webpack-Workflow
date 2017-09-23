@@ -4,7 +4,7 @@ import { keyValue as externalVariable } from './includes/external.js';
 import * as fullimport from './includes/fullexport.js'; // fullimport is imported as an object
 import { Helper } from './includes/helper.js';
 // require("../assets/thirdparty/googlefonts/Open_Sans/OpenSans-Regular.ttf");
-require("../css/includes/_fonts.scss");
+require("../css/includes/_fonts.scss"); // <- necessary for the fonts to be moved to dist
 // import { Fonts } from "../fonts.js";
 
 let log = console.log;

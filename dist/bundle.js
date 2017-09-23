@@ -102,7 +102,7 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 // require("../assets/thirdparty/googlefonts/Open_Sans/OpenSans-Regular.ttf");
-__webpack_require__(8);
+__webpack_require__(8); // <- necessary for the fonts to be moved to dist
 // import { Fonts } from "../fonts.js";
 
 var log = console.log;
