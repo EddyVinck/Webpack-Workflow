@@ -3,6 +3,9 @@ import '../css/main.scss';
 import { keyValue as externalVariable } from './includes/external.js';
 import * as fullimport from './includes/fullexport.js'; // fullimport is imported as an object
 import { Helper } from './includes/helper.js';
+// require("../assets/thirdparty/googlefonts/Open_Sans/OpenSans-Regular.ttf");
+require("../css/includes/_fonts.scss");
+// import { Fonts } from "../fonts.js";
 
 let log = console.log;
 log(externalVariable); // imported from the external file

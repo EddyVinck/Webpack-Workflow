@@ -101,6 +101,10 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
+// require("../assets/thirdparty/googlefonts/Open_Sans/OpenSans-Regular.ttf");
+__webpack_require__(8);
+// import { Fonts } from "../fonts.js";
+
 var log = console.log;
 log(_external.keyValue); // imported from the external file
 log(fullimport.introduceMe(fullimport.myName));
@@ -17481,6 +17485,12 @@ var Helper = exports.Helper = function () {
 
     return Helper;
 }();
+
+/***/ }),
+/* 8 */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
 
 /***/ })
 /******/ ]);

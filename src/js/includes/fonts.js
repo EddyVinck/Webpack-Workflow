@@ -1,0 +1,1 @@
+// export let Fonts = require("../assets/thirdparty/googlefonts/Open_Sans/OpenSans-Regular.ttf");
