@@ -70,13 +70,6 @@
 "use strict";
 
 
-var _get = function get(object, property, receiver) { if (object === null) object = Function.prototype; var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { return get(parent, property, receiver); } } else if ("value" in desc) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } };
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-var _slicedToArray = function () { function sliceIterator(arr, i) { var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"]) _i["return"](); } finally { if (_d) throw _e; } } return _arr; } return function (arr, i) { if (Array.isArray(arr)) { return arr; } else if (Symbol.iterator in Object(arr)) { return sliceIterator(arr, i); } else { throw new TypeError("Invalid attempt to destructure non-iterable instance"); } }; }(); // fullimport is imported as an object
-
-
 var _lodash = __webpack_require__(1);
 
 var _lodash2 = _interopRequireDefault(_lodash);
@@ -91,23 +84,21 @@ var fullimport = _interopRequireWildcard(_fullexport);
 
 var _helper = __webpack_require__(7);
 
+var _dataEqualize = __webpack_require__(8);
+
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+// fullimport is imported as an object
+__webpack_require__(9); // <- necessary for the fonts to be moved to dist
 
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-// require("../assets/thirdparty/googlefonts/Open_Sans/OpenSans-Regular.ttf");
-__webpack_require__(8); // <- necessary for the fonts to be moved to dist
-// import { Fonts } from "../fonts.js";
+var dataEqualizeContainer = (0, _dataEqualize.dataEqualize)("data-equalize-container");
+console.log(dataEqualizeContainer);
 
 var log = console.log;
-log(_external.keyValue); // imported from the external file
-log(fullimport.introduceMe(fullimport.myName));
+// log(externalVariable); // imported from the external file
+// log(fullimport.introduceMe(fullimport.myName));
 
 var component = function component() {
     var element = document.createElement('div');
@@ -118,157 +109,92 @@ var component = function component() {
 
 // document.body.appendChild(component());
 
-var fn = function fn() {
-    var list = ['banana', 'apple', 'orange'];
-    var ul = document.getElementById("basket");
-    var li = document.createElement("li");
+// let fn = () => {
+//     const list = ['banana', 'apple', 'orange'];
+//     let ul = document.getElementById("basket");
+//     let li = document.createElement("li");
 
-    li.appendChild(document.createTextNode("Test 1"));
-    ul.appendChild(li);
-};
+//     li.appendChild(document.createTextNode("Test 1"));
+//     ul.appendChild(li);
+// };
 
 // fn();
 
-var addFruitToBasket = function addFruitToBasket() {
-    var fruits = ['banana', 'apple', 'orange'];
-    var ul = document.getElementById("basket");
+// let addFruitToBasket = () => {
+//     const fruits = ['banana', 'apple', 'orange'];
+//     let ul = document.getElementById("basket");
 
-    var _iteratorNormalCompletion = true;
-    var _didIteratorError = false;
-    var _iteratorError = undefined;
-
-    try {
-        for (var _iterator = fruits.entries()[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
-            var _ref = _step.value;
-
-            var _ref2 = _slicedToArray(_ref, 2);
-
-            var index = _ref2[0];
-            var fruit = _ref2[1];
-
-            var li = document.createElement("li");
-            li.appendChild(document.createTextNode(index + 1 + '. ' + fruit));
-            ul.appendChild(li);
-        }
-    } catch (err) {
-        _didIteratorError = true;
-        _iteratorError = err;
-    } finally {
-        try {
-            if (!_iteratorNormalCompletion && _iterator.return) {
-                _iterator.return();
-            }
-        } finally {
-            if (_didIteratorError) {
-                throw _iteratorError;
-            }
-        }
-    }
-};
+//     for (let [index, fruit] of fruits.entries()) {
+//       let li = document.createElement("li");
+//       li.appendChild(document.createTextNode(`${index + 1}. ${fruit}`));
+//       ul.appendChild(li);
+//     }
+// };
 
 // addFruitToBasket();
 
-var numbers = [0, 1, 2, 3, 4, 5];
-var a = numbers[0],
-    b = numbers[1],
-    c = numbers[2],
-    d = numbers.slice(3);
+// let numbers = [0, 1, 2, 3, 4, 5];
+// let [a, b, c, ...d] = numbers;
 
-// swapping variables easily
-
-var ten = 10;
-var twenty = 20;
-var _ref3 = [twenty, ten];
-ten = _ref3[0];
-twenty = _ref3[1];
-
-log(ten);
+// // swapping variables easily
+// let ten = 10;
+// let twenty = 20;
+// [ten, twenty] = [twenty, ten];
+// log(ten);
 
 // creating variables fast with destructuring
-var x = "x",
-    y = "y";
-
-log(x, y);
+// let [x, y] = ["x", "y"];
+// log(x, y);
 
 // basic class
+// class Person {
+//     constructor(name) {
+//         this.name = name;
+//     }
 
-var Person = function () {
-    function Person(name) {
-        _classCallCheck(this, Person);
+//     greet() {
+//         log(`Hello! My name is ${this.name}`);
+//     }
+// }
+// let person = new Person("Barrie");
+// log(Person);
+// log(person);
+// person.greet();
 
-        this.name = name;
-    }
+// class TalentedPerson extends Person {
+//     constructor(name, age = 18){
+//         super(name); // takes the constructor from the class that this class extends
+//         this._age = age;
+//     }
+//     get age(){
+//         return this._age*2;
+//     }
+//     set age(newAge){
+//         newAge >= 0 ? this._age = newAge : console.log(`${this.name} Can't have an age of ${newAge}`);
+//     }
+//     tellAge() {
+//         log(`I am ${this.age}`);
+//     };
+//     greet(){
+//          log(`Hello! My name is ${this.name} and I am ${this.age}`);
+//     }
+//     greetTwice(){
+//         super.greet(); // takes parent class' function
+//         this.greet(); // takes this class' function
+//     }
+// }
 
-    _createClass(Person, [{
-        key: 'greet',
-        value: function greet() {
-            log('Hello! My name is ' + this.name);
-        }
-    }]);
-
-    return Person;
-}();
-
-var person = new Person("Barrie");
-log(Person);
-log(person);
-person.greet();
-
-var TalentedPerson = function (_Person) {
-    _inherits(TalentedPerson, _Person);
-
-    function TalentedPerson(name) {
-        var age = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 18;
-
-        _classCallCheck(this, TalentedPerson);
-
-        // takes the constructor from the class that this class extends
-        var _this = _possibleConstructorReturn(this, (TalentedPerson.__proto__ || Object.getPrototypeOf(TalentedPerson)).call(this, name));
-
-        _this._age = age;
-        return _this;
-    }
-
-    _createClass(TalentedPerson, [{
-        key: 'tellAge',
-        value: function tellAge() {
-            log('I am ' + this.age);
-        }
-    }, {
-        key: 'greet',
-        value: function greet() {
-            log('Hello! My name is ' + this.name + ' and I am ' + this.age);
-        }
-    }, {
-        key: 'greetTwice',
-        value: function greetTwice() {
-            _get(TalentedPerson.prototype.__proto__ || Object.getPrototypeOf(TalentedPerson.prototype), 'greet', this).call(this); // takes parent class' function
-            this.greet(); // takes this class' function
-        }
-    }, {
-        key: 'age',
-        get: function get() {
-            return this._age * 2;
-        },
-        set: function set(newAge) {
-            newAge >= 0 ? this._age = newAge : console.log(this.name + ' Can\'t have an age of ' + newAge);
-        }
-    }]);
-
-    return TalentedPerson;
-}(Person);
-
-var Eddy = new TalentedPerson("Eddy", 21);
-Eddy.greetTwice();
-Eddy.tellAge();
-console.log(Eddy.age);
-Eddy.age = 22;
-Eddy.age = -5;
+// let Eddy = new TalentedPerson("Eddy", 21);
+// Eddy.greetTwice();
+// Eddy.tellAge();
+// console.log(Eddy.age);
+// Eddy.age = 22;
+// Eddy.age = -5;
 
 // Helper is not an object, it is a class.
 // Making a static method allows usage without instantiating an object derived
 // from a class.
-_helper.Helper.logTwice("Hello webserver!");
+// Helper.logTwice("Hello webserver!");
 
 /***/ }),
 /* 1 */
@@ -17488,6 +17414,57 @@ var Helper = exports.Helper = function () {
 
 /***/ }),
 /* 8 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+	value: true
+});
+exports.dataEqualize = dataEqualize;
+// get data-equalize-container
+// look for all elements with data-equalize
+// take the height of the tallest one
+// apply that height to all the data-equalize elements
+
+function dataEqualize(dataEqualizeContainer) {
+	var container = getAllElementsWithAttribute(dataEqualizeContainer);
+	// let children = getAllChildElementsWithAttribute(container);
+	return 1;
+
+	function getAllChildElementsWithAttribute(parentsArray, attribute) {
+		var matchingElements = [];
+		var allElements = parentsArray.getElementsByTagName('*');
+
+		for (var i = 0, n = allElements.length; i < n; i++) {
+			if (allElements[i].getAttribute(attribute) !== null) {
+				// Element exists with attribute. Add to array.
+				matchingElements.push(allElements[i]);
+			}
+		}
+		return matchingElements;
+	}
+
+	function getAllElementsWithAttribute(attribute) {
+		var matchingElements = [];
+		var allElements = document.getElementsByTagName('*');
+		for (var i = 0, n = allElements.length; i < n; i++) {
+			if (allElements[i].getAttribute(attribute) !== null) {
+				console.log(allElements[i]);
+				console.log(allElements[i].hasAttribute('data-equalize'));
+				// Element exists with attribute. Add to array.
+				// matchingElements.push(allElements[i]);
+			}
+		}
+		// console.log();
+		// console.log(matchingElements);
+		// return matchingElements;
+	}
+}
+
+/***/ }),
+/* 9 */
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin

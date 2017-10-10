@@ -1,32 +1,67 @@
 @import "settings";
+@import "../partials/components/_footer-1.scss";
+
+$column-padding: 0;
+$column-padding-medium-and-up: 1.25rem;
+
+html, body {
+    height: 100%;
+    width: 100%;
+}
 body {
     margin: 0;
 }
 .container {
-    .row {
-        max-width: $max-container-width;
-    }     
     margin: 0 auto;
+    min-height: 100%;
+    height: auto !important;
+    height: 100%;
+
+    .row {
+        max-width: $max-grid-width;
+    }    
 }
 .row {
     margin: 0 auto;
     width: $row-width;
 
-    // @media  {
-
-    // }
+    &:after {
+        content: "";
+        display: block;
+        clear: both;
+    }
+    @media #{$small-only} {
+        width: 96%;
+    }
 }
 .column {
+    // method 1: left floating blocks. requires a lot of clear:both
+    display: block;
+    float: left;
+
+    // method 2: inline-block, not able to utilize 100% of the screen
+    display: inline-block;
+    vertical-align: top; // VERY IMPORTANT and has to do with baseline
+    // Because inline-blocks by default align vertically on the baseline
+    // of text.
+    float: none;
     max-width: 100%;
+
+    @media #{$medium-and-up} {
+        padding-left: $column-padding-medium-and-up;
+        padding-right: $column-padding-medium-and-up;
+    }
+    padding-left: $column-padding;
+    padding-right: $column-padding;
     
-    &.s12 {
-        width: 12 / 12 * 100%;
+    // all column sizes for each breakpoint
+    @each $size, $breakpoint in $breakpoints {
+        @media screen and #{ $breakpoint} {
+            @for $i from 1 through $column-amount {
+                &.#{$size}#{$i} { width: $i / 12.25 * 100%; }
+            }
+        }
     }
-    &.s11 {
-        width: 11/12*100%;
-    }
-    &.s6 {
-        width: 6/12*100%;
-    }
-    
 }
+// https://foundation.zurb.com/sites/docs/v/5.5.3/components/block_grid.html
+// info on clearing the float so the columns arent ruined
