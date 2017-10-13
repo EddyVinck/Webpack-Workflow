@@ -1,4 +1,5 @@
 var path = require('path');
+var webpack = require('webpack');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 var extractPlugin = new ExtractTextPlugin({
@@ -41,6 +42,16 @@ module.exports = {
 						},
 							'sass-loader']
 				})				
+			},{
+				test: /\.css$/,
+				use: extractPlugin.extract({
+					use: [
+						{
+							loader: 'css-loader', 
+							options: {minimize: false}
+						}
+					]
+				})				
 			},
 			{
 				test: /\.html$/,
@@ -72,6 +83,11 @@ module.exports = {
 	},
 	
 	plugins: [
+		new webpack.ProvidePlugin({
+			$: "jquery",
+			jQuery: "jquery",
+			"window.jQuery": "jquery"
+		}),
 		extractPlugin,
 		//// actual templates
 		new HtmlWebpackPlugin({
@@ -83,6 +99,11 @@ module.exports = {
 			template: "src/templates/test.pug",
 			favicon: "src/img/ecmascript6.png",
 			filename: "test.html"
+		}),
+		new HtmlWebpackPlugin({
+			template: "src/templates/materialize.pug",
+			favicon: "src/img/ecmascript6.png",
+			filename: "materialize.html"
 		})
 	]
 };

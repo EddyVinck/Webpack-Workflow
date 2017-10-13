@@ -1,0 +1,52 @@
+//- <ul id="slide-out" class="side-nav">
+//-     <li><div class="user-view">
+//-       <div class="background">
+//-         <img src="images/office.jpg">
+//-       </div>
+//-       <a href="#!user"><img class="circle" src="images/yuna.jpg"></a>
+//-       <a href="#!name"><span class="white-text name">John Doe</span></a>
+//-       <a href="#!email"><span class="white-text email">jdandturk@gmail.com</span></a>
+//-     </div></li>
+//-     <li><a href="#!"><i class="material-icons">cloud</i>First Link With Icon</a></li>
+//-     <li><a href="#!">Second Link</a></li>
+//-     <li><div class="divider"></div></li>
+//-     <li><a class="subheader">Subheader</a></li>
+//-     <li><a class="waves-effect" href="#!">Third Link With Waves</a></li>
+//-   </ul>
+//-   <a href="#" data-activates="slide-out" class="button-collapse"><i class="material-icons">menu</i></a>
+body
+	ul#slide-out.slide-nav
+		li
+			.user-view
+				.background
+					img(src=require('../img/PlaceholderLogo.jpg'), alt="")
+				a(href="#"): img(src=require('../img/pug.png'), alt="")
+				a(href="#"): span.white-text.name John Doe
+				a(href="#"): span.white-text.email asdads@gmail.com
+		li
+			a: i.material-icons cloud
+			| First link with icon
+		li: a(href="#") Second link
+		li: .divider
+		li: a.subheader(href="#") Subheader
+		li: a.waves-effect(href="#") Third link with waves
+
+
+
+	.container
+		.row
+			.col.s12.m6
+				.card.blue-grey.darken-1
+					.card-content.white-text
+						span.card-title
+						p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque illum sapiente ipsum non aperiam vel, ab hic quasi aspernatur consectetur omnis sint accusantium possimus dolorum dicta distinctio similique quas fugit?
+					.card-action
+						a(href="#") Link
+						a(href="#") Link
+				<a href="#" data-activates="slide-out" class="button-collapse"><i class="material-icons">menu</i></a>
+
+script(type="text/javascript").
+		//- $(".button-collapse").sideNav();
+		// Initialize collapse button
+		// Initialize collapsible (uncomment the line below if you use the dropdown variation)
+		//$('.collapsible').collapsible();

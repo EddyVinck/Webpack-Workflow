@@ -1,3 +1,12 @@
+// import '../../node_modules/materialize-css/dist/css/materialize.min.css';
+// import '../../node_modules/materialize-css/dist/js/materialize.min.js';
+// import '..materialize-css/dist/js/materialize.min.js';
+// import 'materialize-css/dist/sass/materialize.scss';
+import 'materialize-css/dist/css/materialize.min.css';
+import 'materialize-css/dist/js/materialize.min.js';
+// require('materialize-css/sass/materialize.scss');
+// import '../../node_modules/materialize-css/dist/css/materialize.css';
+// import 'materialize-css/dist/js/materialize.js';
 import _ from 'lodash';
 import '../css/main.scss';
 import { keyValue as externalVariable } from './includes/external.js';
@@ -7,11 +16,13 @@ import { dataEqualize } from './includes/data-equalize.js';
 require("../css/includes/_fonts.scss"); // <- necessary for the fonts to be moved to dist
 
 var dataEqualizeContainer = dataEqualize("data-equalize-container");
-console.log(dataEqualizeContainer);
+// console.log(dataEqualizeContainer);
 
 let log = console.log;
 // log(externalVariable); // imported from the external file
 // log(fullimport.introduceMe(fullimport.myName));
+
+$(".button-collapse").sideNav();
 
 let component = () => {
     var element = document.createElement('div');
