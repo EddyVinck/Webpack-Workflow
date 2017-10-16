@@ -90,9 +90,6 @@ function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj;
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-// fullimport is imported as an object
-__webpack_require__(9); // <- necessary for the fonts to be moved to dist
-
 /***/ }),
 /* 1 */
 /***/ (function(module, exports, __webpack_require__) {
@@ -17359,12 +17356,6 @@ function dataEqualize(dataEqualizeContainer) {
 		// return matchingElements;
 	}
 }
-
-/***/ }),
-/* 9 */
-/***/ (function(module, exports) {
-
-// removed by extract-text-webpack-plugin
 
 /***/ })
 /******/ ]);
