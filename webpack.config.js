@@ -92,7 +92,8 @@ module.exports = {
 			js: path.resolve(__dirname, 'src/js/'),
 			templates: path.resolve(__dirname, 'src/templates/'),
 			modules: path.resolve(__dirname, 'node_modules'),
-			fonts: path.resolve(__dirname, 'src/css/includes')
+			cssIncludes: path.resolve(__dirname, 'src/css/includes'),
+			fonts: path.resolve(__dirname, 'src/assets/thirdparty/fonts/')
 		}
 	}
 };
