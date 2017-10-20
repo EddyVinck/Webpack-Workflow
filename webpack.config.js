@@ -27,7 +27,7 @@ module.exports = {
 					{
 						loader:'pug-loader',
 						options: {
-							pretty: true
+							pretty: false
 						}
 					}					
 				]
@@ -38,9 +38,10 @@ module.exports = {
 					use: [
 						{
 							loader: 'css-loader', 
-							options: {minimize: false}
+							options: {minimize: true}
 						},
-							'sass-loader']
+							'sass-loader'
+						]
 				})				
 			},{
 				test: /\.css$/,
@@ -58,12 +59,12 @@ module.exports = {
 				use: ['html-loader']
 			},
 			{
-				test: /\.(jpg|png)$/,
+				test: /\.(jpg|png|gif)$/,
 				use: [
 					{
 						loader: 'file-loader',
 						options: {
-							name: 'img/[name].[ext]'
+							name: 'assets/img/[name].[ext]'
 						}
 					}
 				]
@@ -74,14 +75,15 @@ module.exports = {
 					{
 						loader: 'file-loader',
 						options: {
-							name: '[path][name].[ext]'
+							name: '[name].[ext]',
+							outputPath: 'assets/fonts/'
 						}
 					}
 				]
 			}
 		]
-	},
-	
+		
+	},	
 	plugins: [
 		new webpack.ProvidePlugin({
 			$: "jquery",
@@ -105,5 +107,18 @@ module.exports = {
 			favicon: "src/img/ecmascript6.png",
 			filename: "materialize.html"
 		})
-	]
+	],
+	resolve: {
+		alias: {
+			images: path.resolve(__dirname, 'src/img/'),
+			js: path.resolve(__dirname, 'src/js/'),
+			templates: path.resolve(__dirname, 'src/templates/'),
+			
+			modules: path.resolve(__dirname, 'node_modules'),
+
+			fonts: path.resolve(__dirname, 'src/assets/thirdparty/fonts/'),
+			cssIncludes: path.resolve(__dirname, 'src/css/includes'),
+			materializeJS: path.resolve(__dirname, 'src/js/includes/thirdparty/materialize/')
+		}
+	}
 };
