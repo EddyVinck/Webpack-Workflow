@@ -1,1 +1,0 @@
-export let keyValue = 'Hello from external.js!';
