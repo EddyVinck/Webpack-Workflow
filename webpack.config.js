@@ -43,7 +43,8 @@ module.exports = {
 							'sass-loader'
 						]
 				})				
-			},{
+			},
+			{
 				test: /\.css$/,
 				use: extractPlugin.extract({
 					use: [
@@ -81,8 +82,7 @@ module.exports = {
 					}
 				]
 			}
-		]
-		
+		]		
 	},	
 	plugins: [
 		new webpack.ProvidePlugin({
