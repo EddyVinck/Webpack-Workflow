@@ -1,0 +1,25 @@
+// BREAKPOINTS
+
+$small-only: "(max-width: 39.9375em)";
+$medium-only: "(min-width: 40em) and (max-width: 63.9375em)";
+$medium-and-up: "(min-width: 40em)";
+$large-only: "(min-width: 63.9375em) and (max-width: 74.9375em)";
+$large-and-up: "(min-width: 63.9375em)";
+$xlarge-only: "(min-width:  74.9375em)";
+
+$breakpoints: ( s: $small-only, 
+                m: $medium-only,
+                l: $large-only,
+                xl: $xlarge-only);
+
+// GRID SETTINGS
+
+$column-amount: 12;
+$max-grid-width: 1200px;
+$row-width: 90%;
+
+// OTHER SETTINGS
+
+// fonts
+// $fonts: "open-sans", sans-serif, arial;
+$fonts: "open-sans", sans-serif, arial;

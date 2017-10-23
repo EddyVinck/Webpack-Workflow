@@ -1,0 +1,39 @@
+include /includes/mixins.pug
+
+doctype html
+html
+	head
+		title= pageTitle
+		script(type='text/javascript').
+			console.log("Pug!");
+		include /includes/meta.pug
+		link(href='https://fonts.googleapis.com/icon?family=Material+Icons', rel='stylesheet')
+	body
+		include /components/nav.pug
+		.container
+			section
+				.background-color-light-grey.padding-top-large.padding-bottom
+					.row
+						.column.s12
+							h1 Webpack, Sass & Pug
+							h2 it's all here.
+							p.
+								Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi, 
+								impedit similique aperiam tempore numquam fuga et esse laboriosam 
+								suscipit velit, accusamus deleniti veritatis exercitationem error 
+								dolorum
+							img(src=require("images/webpack.png"), alt="")
+
+							- var images = ["webpack", "pug","babel","sass"];
+							//- - var images = ["pug", "pug","pug","pug"];
+							//- - var images = ["babel", "babel","babel","babel"];
+							//- - var images = ["sass", "sass","sass","sass"];
+					.row(data-equalize-container)
+						for img, ext in images
+							.column.s12.m6.l3.xl3
+								div(data-equalize)
+									div(style="background-image: url("+require("../img/"+img+".png")+")").card-image
+									h2 A description of #{img}.
+									+list(4, "some-list")
+					//- include /includes/footer-placeholder.pug
+			//- include /components/footer.pug/

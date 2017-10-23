@@ -1,0 +1,21 @@
+$margin-bpsmall-large: 40px;
+
+$padding-bpsmall-large: 40px;
+$padding-bpsmall: 25px;
+
+.margin-top-large {
+    margin-top: $margin-bpsmall-large;
+    // media queries for medium, large and xlarge
+}
+.padding-top-large {
+    padding-top: $padding-bpsmall-large;
+}
+.padding-bottom-large {
+    padding-bottom: $padding-bpsmall-large;
+}
+.padding-top {
+    padding-top: $padding-bpsmall;
+}
+.padding-bottom {
+    padding-bottom: $padding-bpsmall;
+}

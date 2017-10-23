@@ -1,0 +1,30 @@
+$footer-height-medium-up: 220px;
+
+.container {
+    margin-bottom: $footer-height-medium-up*-1;
+}
+
+footer, .push {
+    position: relative;
+    bottom: 0;
+
+    height: $footer-height-medium-up;
+}
+footer.footer-1{
+    background-color: #454545;
+    ul {
+        li, a {
+            margin-right: 0;
+            color: #edf14b;
+            text-decoration: none;
+            &:hover {
+                color: #f7f7f7;
+                text-decoration: underline;
+            }
+        }
+    }
+    
+    overflow: hidden; // waarom wordt de footer hierdoor groter??
+    // omdat wanneer je elementen float ze in principe geen afmetingen meer hebben
+    // door overflow te zetten forceer je de browser de afmetingen te berekenen
+}
