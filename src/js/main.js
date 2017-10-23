@@ -1,4 +1,4 @@
-import 'materialize-css/dist/js/materialize.min.js';
+// import 'materialize-css/dist/js/materialize.min.js';
 import _ from 'lodash';
 import '../css/main.scss';
 import { keyValue as externalVariable } from './includes/external.js';
