@@ -1,0 +1,38 @@
+$floating-cta-padding: 50px;
+
+.floating-cta-wrapper {
+	overflow: hidden;
+	padding-bottom: $floating-cta-padding;
+}
+.floating-cta-container {
+	position: relative;
+
+	&:before {
+		position: absolute;
+		content: "";
+		left: -2000px;
+		right: -2000px;
+		top: 50%;
+		bottom: $floating-cta-padding *-1;
+		
+		background-color: $color-light-grey; // default
+
+		// color loop
+	}
+
+	.floating-cta {
+		position: relative;
+		top: 50%;
+		z-index: 1;
+
+		padding: 2rem;
+		border-radius: 10px;
+		-webkit-box-shadow: 0px 4px 5px -1px rgba(0,0,0,0.4);
+	  -moz-box-shadow: 0px 4px 5px -1px rgba(0,0,0,0.4);
+	  box-shadow: 0px 4px 5px -1px rgba(0,0,0,0.4);
+	  background-color: $color-white;
+
+	  &:before {}
+	  &:after {}
+	}
+}

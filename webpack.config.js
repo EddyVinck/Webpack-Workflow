@@ -106,6 +106,11 @@ module.exports = {
 			template: "src/templates/materialize.pug",
 			favicon: "src/img/ecmascript6.png",
 			filename: "materialize.html"
+		}),
+		new HtmlWebpackPlugin({
+			template: "src/templates/playground.pug",
+			favicon: "src/img/ecmascript6.png",
+			filename: "playground.html"
 		})
 	],
 	resolve: {

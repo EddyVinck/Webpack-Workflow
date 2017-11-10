@@ -2,7 +2,18 @@ $color-white: #fff;
 $color-light-grey: #F6F6F6;
 $color-grey: #c2c2c2;
 $color-black: #000;
+$color-blue: #2196f3; 
+
+$colors: (
+	white: $color-white,
+	light-grey: $color-light-grey,
+	grey: $color-grey,
+	black: $color-black 
+	);
 
 .background-color-light-grey {
     background-color: $color-light-grey;
+}
+.background-color-blue {
+	background-color: $color-blue;
 }
