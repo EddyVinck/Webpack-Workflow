@@ -62,6 +62,13 @@ body {
             }
         }
     }
+    @each $size, $breakpoint in $breakpoints {
+        @media screen and #{ $breakpoint} {
+            @for $i from 1 through $column-amount {
+                &.offset-#{$size}#{$i} { margin-left: $i / 12.25 * 100%; }
+            }
+        }
+    }
 }
 // https://foundation.zurb.com/sites/docs/v/5.5.3/components/block_grid.html
 // info on clearing the float so the columns arent ruined
