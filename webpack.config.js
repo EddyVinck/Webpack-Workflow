@@ -1,12 +1,32 @@
+// require
 var path = require('path');
 var webpack = require('webpack');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
+var HtmlWebpackPlugin = require('html-webpack-plugin');
+// const fs = require('fs');
 
 var extractPlugin = new ExtractTextPlugin({
 	filename: 'main.css'
-})
+});
 
-var HtmlWebpackPlugin = require('html-webpack-plugin');
+// var templates = ["index", "test"];
+// var favicon = "src/img/ecmascript6.png";
+
+// function generateHtmlPlugins (templateDir) {
+//   const templateFiles = fs.readdirSync(path.resolve(__dirname, templateDir));
+//   return templateFiles.map(item => {
+//     // Split names and extension
+//     const parts = item.split('.');
+//     const name = parts[0];
+//     const extension = parts[1];
+//     return new HTMLWebpackPlugin({
+//       filename: `${name}.html`,
+//       template: path.resolve(__dirname, `${templateDir}/${name}.${extension}`)
+//     })
+//   })
+// }
+
+// const htmlPlugins = generateHtmlPlugins('./src/templates/views');
 
 module.exports = {
 	entry: './src/js/main.js',
@@ -20,17 +40,6 @@ module.exports = {
 		[
 			{ 
 				test: /\.js$/, exclude: /node_modules/, loader: "babel-loader" 
-			},
-			{
-				test: /\.pug$/,
-				use: [
-					{
-						loader:'pug-loader',
-						options: {
-							pretty: false
-						}
-					}					
-				]
 			},
 			{
 				test: /\.scss$/,
@@ -91,39 +100,20 @@ module.exports = {
 			"window.jQuery": "jquery"
 		}),
 		extractPlugin,
-		//// actual templates
-		new HtmlWebpackPlugin({
-			template: "src/templates/index.pug",
-			favicon: "src/img/ecmascript6.png",
-			filename: "index.html"
-		}),	
-		new HtmlWebpackPlugin({
-			template: "src/templates/test.pug",
-			favicon: "src/img/ecmascript6.png",
-			filename: "test.html"
-		}),
-		new HtmlWebpackPlugin({
-			template: "src/templates/materialize.pug",
-			favicon: "src/img/ecmascript6.png",
-			filename: "materialize.html"
-		}),
-		new HtmlWebpackPlugin({
-			template: "src/templates/playground.pug",
-			favicon: "src/img/ecmascript6.png",
-			filename: "playground.html"
+		new HTMLWebpackPLugin({
+			filename: 'index.html',
+			template: './src/templates/views/index.html'
 		})
 	],
 	resolve: {
 		alias: {
 			images: path.resolve(__dirname, 'src/img/'),
 			js: path.resolve(__dirname, 'src/js/'),
-			templates: path.resolve(__dirname, 'src/templates/'),
-			
-			modules: path.resolve(__dirname, 'node_modules'),
-
-			fonts: path.resolve(__dirname, 'src/assets/thirdparty/fonts/'),
-			cssIncludes: path.resolve(__dirname, 'src/css/includes'),
-			materializeJS: path.resolve(__dirname, 'src/js/includes/thirdparty/materialize/')
+			templates: path.resolve(__dirname, 'src/templates/')	
+			// modules: path.resolve(__dirname, 'node_modules'),
+			// fonts: path.resolve(__dirname, 'src/assets/thirdparty/fonts/'),
+			// cssIncludes: path.resolve(__dirname, 'src/css/includes'),
+			// materializeJS: path.resolve(__dirname, 'src/js/includes/thirdparty/materialize/')
 		}
 	}
 };
