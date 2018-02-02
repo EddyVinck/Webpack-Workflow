@@ -7,7 +7,7 @@ var HtmlWebpackPlugin = require('html-webpack-plugin');
 
 var extractPlugin = new ExtractTextPlugin({
 	filename: 'main.css'
-});
+})
 
 // var templates = ["index", "test"];
 // var favicon = "src/img/ecmascript6.png";
@@ -100,19 +100,20 @@ module.exports = {
 			"window.jQuery": "jquery"
 		}),
 		extractPlugin,
-		new HTMLWebpackPLugin({
-			filename: 'index.html',
-			template: './src/templates/views/index.html'
+		new HtmlWebpackPlugin({
+			template: "src/templates/views/index.html",
+			favicon: "src/img/ecmascript6.png",
+			filename: "test.html"
 		})
 	],
 	resolve: {
 		alias: {
 			images: path.resolve(__dirname, 'src/img/'),
 			js: path.resolve(__dirname, 'src/js/'),
-			templates: path.resolve(__dirname, 'src/templates/')	
+			templates: path.resolve(__dirname, 'src/templates/'),
 			// modules: path.resolve(__dirname, 'node_modules'),
-			// fonts: path.resolve(__dirname, 'src/assets/thirdparty/fonts/'),
-			// cssIncludes: path.resolve(__dirname, 'src/css/includes'),
+			fonts: path.resolve(__dirname, 'src/assets/thirdparty/fonts/'),
+			cssIncludes: path.resolve(__dirname, 'src/css/includes')
 			// materializeJS: path.resolve(__dirname, 'src/js/includes/thirdparty/materialize/')
 		}
 	}

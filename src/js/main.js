@@ -8,5 +8,5 @@ import { dataEqualize } from './includes/data-equalize.js';
 
 // materialize inits
 
-import "materializeJS/collapsible.js";
-import "materializeJS/side-nav.js";
+// import "materializeJS/collapsible.js";
+// import "materializeJS/side-nav.js";
